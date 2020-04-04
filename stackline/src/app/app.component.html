@@ -61,11 +61,11 @@
             </thead>
             <tbody>
               <tr *ngFor="let data of this.salesData">
-                <td class="text-center">{{data.weekEnding | date: 'MM-dd-yyyy'}}</td>
-                <td class="text-center">{{data.retailSales | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
-                <td class="text-center">{{data.wholesaleSales | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
-                <td class="text-center">{{data.unitsSold}}</td>
-                <td class="text-center">{{data.retailerMargin | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
+                <td class="text-center textGrey">{{data.weekEnding | date: 'MM-dd-yyyy'}}</td>
+                <td class="text-center textGrey">{{data.retailSales | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
+                <td class="text-center textGrey">{{data.wholesaleSales | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
+                <td class="text-center textGrey">{{data.unitsSold}}</td>
+                <td class="text-center textGrey">{{data.retailerMargin | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
               </tr>
             </tbody>
           </table>
