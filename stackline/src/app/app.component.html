@@ -4,7 +4,7 @@
 
   <div class="container-fluid mt-5">
     <div class="row m-2">
-      <div class="col-sm-12 col-md-2 panelWhite p-0" style="height: 1000px;">
+      <div class="col-sm-12 col-md-2 panelWhite p-0 shadow" style="height: 1000px;">
         <div class="card" style="border: none; padding-top: 10px;">
           <img src="../assets/images/1.PNG" alt="" class="stackline-img">
           <div class="card-body text-center p-0">
@@ -39,15 +39,14 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-10 ">
-        <div class="col-sm-12 col-md-12 col-lg-12 panelWhite pt-4 pb-4">
+        <div class="col-sm-12 col-md-12 col-lg-12 panelWhite pt-4 pb-4 shadow">
           <h6 style="margin-left: 18px; font-weight: 300;">Retail Sales</h6>
           <div *ngIf="chart">
             <canvas id="canvas">{{chart}}</canvas>
           </div>
         </div>
         <br>
-        <div class="col-sm-12 col-md-12 col-lg-12 panelWhite mb-3"
-          style="overflow: auto;height: 500px; border-top: none;">
+        <div class="col-sm-12 col-md-12 col-lg-12 panelWhite mb-3 tableData shadow">
           <table class="table">
             <thead>
               <tr>
