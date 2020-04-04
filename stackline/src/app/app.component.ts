@@ -22,8 +22,8 @@ export class AppComponent implements OnInit {
   ) { }
 
   public ngOnInit() {
-    this.stackLineService.getStackLineData().subscribe((res) => {
-      this.stackLineData = res ? res : null;
+    this.stackLineService.getStackLineData().subscribe((stackLineResponse) => {
+      this.stackLineData = stackLineResponse ? stackLineResponse : null;
       for (const data of this.stackLineData) {
         this.salesData = data && data.sales ? data.sales : null;
 
