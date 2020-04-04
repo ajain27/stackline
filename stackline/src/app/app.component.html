@@ -1,35 +1,76 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <nav class="navbar navbar-expand-lg panelWhite">
+    <a class="navbar-brand" href="#">Stackline</a>
+  </nav>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+  <div class="container-fluid mt-5">
+    <div class="row m-2">
+      <div class="col-sm-12 col-md-2 panelWhite p-0" style="height: 1000px;">
+        <div class="card" style="border: none;">
+          <img src="../assets/images/1.PNG" alt="" style="height: 200px; width:200px; display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%">
+          <div class="card-body text-center p-0">
+            <div class="card-title mt-2 mb-0 font-weight-bold">Shark Ninja</div>
+            <!-- <div class="card-text font-weight-light">Magic bullet NutriBullet 12-piece <br> High speed blender /mixer system</div> -->
+            <small class="text-muted">Magic bullet NutriBullet 12-piece <br> High speed blender/mixer system</small>
+            <hr>
+            <div class="row m-0">
+              <a href="#" class="badge badge-light mr-4 ml-4 mainBorder customBadge minWidth70">Pantry</a>
+              <a href="#" class="badge badge-light mr-4 mainBorder customBadge minWidth70">Obsolete</a>
+              <a href="#" class="badge badge-light mr-4 mainBorder customBadge minWidth70">Blender</a>
+              <a href="#" class="badge badge-light mr-4 ml-4 mt-2 mainBorder customBadge minWidth70">Lightening Deal</a>
+            </div>
+            <hr>
+            <div class="sidebar">
+              <ul style="list-style-type:none;" class="p-0">
+                <li style="height: 30px;">
+                  <a href="">
+                    <i class="fas fa-home" style="font-size: 15px; color: lightgray;"></i>
+                    <span class="text-uppercase custom">overview</span>
+                  </a>
+                </li>
+                <li><a href="">
+                    <i class="fas fa-home" style="font-size: 15px; color: lightgray;"></i>
+                    <span class="text-uppercase">sales</span>
+                  </a>
+                </li>
+                <li>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+      </div>
+      <div class="col-sm-12 col-md-1"></div>
+      <div class="col-sm-12 col-md-9">
+        <div class="col-sm-12 col-md-12 col-lg-12 panelWhite mt-3" style="height: 500px;">
+          <h6>Retail Stores</h6>
+        </div>
+        <br>
+        <div class="col-sm-12 col-md-12 col-lg-12 panelWhite mb-3"
+          style="overflow: auto;height: 500px; border-top: none;">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"><span class="text-uppercase">Week ending</span></th>
+                <th scope="col"><span class="text-uppercase">retail sales</span></th>
+                <th scope="col"><span class="text-uppercase">wholesale sales</span></th>
+                <th scope="col"><span class="text-uppercase">units sold</span></th>
+                <th scope="col"><span class="text-uppercase">retailer margin</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of this.salesData">
+                <td>{{data.weekEnding | date: 'MM-dd-yyyy'}}</td>
+                <td>{{data.retailSales | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
+                <td>{{data.wholesaleSales | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
+                <td>{{data.unitsSold}}</td>
+                <td>{{data.retailerMargin | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
-</nav>

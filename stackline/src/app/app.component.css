@@ -1,0 +1,58 @@
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #f8f9fa;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.panelWhite {
+  background-color: white;
+}
+
+.mainBorder {
+  border: 1px solid #f8f9fa;
+}
+
+.customBadge {
+  font-weight: 100;
+  background-color: white;
+}
+
+.minWidth70 {
+  min-width: 70px;
+}
+
+.sidebar {
+  position: relative;
+  left: 0;
+  height: 100%;
+}
+
+.sidebar ul a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: black;
+}
+
+
+.sidebar ul li a i {
+  position: absolute;
+  left: 30px;
+}
+
+.sidebar ul li a span {
+  position: relative;
+  top: -29px;
+  right: 72px;
+  font-size: 12px;
+  color: lightgray;
+}
+
+.custom:hover {
+  text-decoration: none;
+}
