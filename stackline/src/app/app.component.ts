@@ -25,11 +25,9 @@ export class AppComponent implements OnInit {
     this.stackLineService.getStackLineData().subscribe((res) => {
       this.stackLineData = res ? res : null;
       for (const data of this.stackLineData) {
-        console.log(data);
         this.salesData = data && data.sales ? data.sales : null;
 
         // Chart code
-
         // tslint:disable-next-line: no-string-literal
         this.retailSales = data['sales'].map((sales: any) => sales.retailSales);
         // tslint:disable-next-line: no-string-literal
@@ -41,27 +39,30 @@ export class AppComponent implements OnInit {
             labels: this.months,
             datasets: [
               {
+                label: 'Retail Selas',
                 data : this.retailSales,
                 borderColor: '#03a5fc',
-                fil: false
+                fill: false
               },
               {
+                label: 'Wholesale Selas',
                 data : this.wholesaleSales,
                 borderColor: '#becacf',
-                fil: false
+                fill: false
               }
             ]
           },
           options:  {
-            legen: {
-              display: false
+            responsive: true,
+            legend: {
+              display: true
             },
             scales: {
               xAxes: [{
                 display: true
               }],
               yAxes: [{
-                display: true
+                display: false
               }]
             }
           }
