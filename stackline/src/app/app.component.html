@@ -44,12 +44,15 @@
       </div>
       <div class="col-sm-12 col-md-1"></div>
       <div class="col-sm-12 col-md-9">
-        <div class="col-sm-12 col-md-12 col-lg-12 panelWhite mt-3" style="height: 500px;">
+        <div class="col-sm-12 col-md-12 col-lg-12 panelWhite mt-3" style="overflow: auto">
           <h6>Retail Stores</h6>
+          <div *ngIf="chart">
+            <canvas id="canvas">{{chart}}</canvas>
+          </div>
         </div>
         <br>
         <div class="col-sm-12 col-md-12 col-lg-12 panelWhite mb-3"
-          style="overflow: auto;height: 500px; border-top: none;">
+          style="overflow: auto; border-top: none;">
           <table class="table">
             <thead>
               <tr>
