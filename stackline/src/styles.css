@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #f8f9fa;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  
+.cursor {
+    cursor: pointer;
+  }
+ 
+.textGrey {
+    color: #c3c9d4;
+  }
+    
+.shadow {
+    box-shadow: 2px 5px 5px #888888;
+  }
+  
