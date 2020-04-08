@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class StacklineService {
 
   constructor(private http: HttpClient) { }
-  private stacklineJson = '../assets/stackline.json';
+  private stacklineJson = '../../assets/stackline.json';
 
   public getStackLineData(): Observable<any> {
     return this.http.get(this.stacklineJson);

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { StacklineService } from '../../stackline.service';
+import { StacklineService } from '../../services/stackline.service';
 
 @Component({
   selector: 'app-sales',

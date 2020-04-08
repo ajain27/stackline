@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StacklineService } from './stackline.service';
+import { StacklineService } from './services/stackline.service';
 import { Chart } from 'chart.js';
 
 @Component({
