@@ -1,73 +1,21 @@
-  <nav class="navbar navbar-expand-lg panelWhite">
-    <img src='../assets/images/2.PNG' style="height: 50px;"/>
-  </nav>
-
+<app-navbar></app-navbar>
   <div class="container-fluid mt-5">
     <div class="row m-2">
       <div class="col-sm-12 col-md-2 panelWhite p-0 shadow" style="height: 1000px;">
-        <div class="card" style="border: none; padding-top: 10px;">
-          <img src="../assets/images/1.PNG" alt="" class="stackline-img">
-          <div class="card-body text-center p-0">
-            <div class="card-title mt-2 mb-0 font-weight-bold">Shark Ninja</div>
-            <small class="text-muted">Magic bullet NutriBullet 12-piece <br> High speed blender/mixer system</small>
-            <hr>
-            <div class="row m-0">
-              <a href="#" class="badge badge-light mr-4 ml-4 mainBorder customBadge minWidth70">Pantry</a>
-              <a href="#" class="badge badge-light mr-4 mainBorder customBadge minWidth70">Obsolete</a>
-              <a href="#" class="badge badge-light mr-4 mainBorder customBadge minWidth70">Blender</a>
-              <a href="#" class="badge badge-light mr-4 ml-4 mt-2 mainBorder customBadge minWidth70">Lightening Deal</a>
-            </div>
-            <hr>
-            <div class="sidebar">
-              <ul style="list-style-type:none;" class="p-0">
-                <li style="height: 30px;">
-                  <a href="">
-                    <i class="fas fa-home" style="font-size: 15px; color: lightgray;"></i>
-                    <span class="text-uppercase">overview</span>
-                  </a>
-                </li>
-                <li><a href="">
-                    <i class="fas fa-align-center" style="font-size: 15px; color: #03a5fc"></i>
-                    <span class="text-uppercase salesText" >sales</span>
-                  </a>
-                </li>
-                <li>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+        <app-sidebar></app-sidebar>
+      </div>      
       <div class="col-sm-12 col-md-10 ">
-        <div class="col-sm-12 col-md-12 col-lg-12 panelWhite pt-4 pb-4 shadow">
+        <div class="col-sm-12 col-md-12 col-lg-12 panelWhite pt-4 pb-4 shadow" style="border: 1px solid green;">
           <h6 style="margin-left: 18px; font-weight: 300;">Retail Sales</h6>
           <div *ngIf="chart">
             <canvas id="canvas">{{chart}}</canvas>
           </div>
         </div>
         <br>
-        <div class="col-sm-12 col-md-12 col-lg-12 panelWhite mb-3 tableData shadow">
-          <table class="table">
-            <thead>
-              <tr>
-                <th class="text-center" scope="col"><span class="text-uppercase headerText">Week ending</span><i class="fa fa-angle-down text-muted cursor" style="margin-left: 10px;"></i></th>
-                <th class="text-center" scope="col"><span class="text-uppercase headerText">retail sales</span><i class="fa fa-angle-down text-muted cursor" style="margin-left: 10px;"></i></th>
-                <th class="text-center" scope="col"><span class="text-uppercase headerText">wholesale sales</span><i class="fa fa-angle-down text-muted cursor" style="margin-left: 10px;"></i></th>
-                <th class="text-center" scope="col"><span class="text-uppercase headerText">units sold</span><i class="fa fa-angle-down text-muted cursor" style="margin-left: 10px;"></i></th>
-                <th class="text-center" scope="col"><span class="text-uppercase headerText">retailer margin</span><i class="fa fa-angle-down text-muted cursor" style="margin-left: 10px;"></i></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let data of this.salesData">
-                <td class="text-center textGrey">{{data.weekEnding | date: 'MM-dd-yyyy'}}</td>
-                <td class="text-center textGrey">{{data.retailSales | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
-                <td class="text-center textGrey">{{data.wholesaleSales | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
-                <td class="text-center textGrey">{{data.unitsSold}}</td>
-                <td class="text-center textGrey">{{data.retailerMargin | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+          <app-sales></app-sales>
       </div>
     </div>
   </div>
+
+
+  <router-outlet></router-outlet>

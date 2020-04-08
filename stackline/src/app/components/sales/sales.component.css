@@ -1,0 +1,10 @@
+  .headerText {
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .tableData {
+    overflow: auto;
+    height: 500px;
+    border-top: none;
+  }

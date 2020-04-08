@@ -1,0 +1,27 @@
+<div class="col-sm-12 col-md-12 col-lg-12 panelWhite mb-3 tableData shadow">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center" scope="col"><span class="text-uppercase headerText">Week ending</span><i
+            class="fa fa-angle-down text-muted cursor" style="margin-left: 10px;"></i></th>
+        <th class="text-center" scope="col"><span class="text-uppercase headerText">retail sales</span><i
+            class="fa fa-angle-down text-muted cursor" style="margin-left: 10px;"></i></th>
+        <th class="text-center" scope="col"><span class="text-uppercase headerText">wholesale sales</span><i
+            class="fa fa-angle-down text-muted cursor" style="margin-left: 10px;"></i></th>
+        <th class="text-center" scope="col"><span class="text-uppercase headerText">units sold</span><i
+            class="fa fa-angle-down text-muted cursor" style="margin-left: 10px;"></i></th>
+        <th class="text-center" scope="col"><span class="text-uppercase headerText">retailer margin</span><i
+            class="fa fa-angle-down text-muted cursor" style="margin-left: 10px;"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of this.salesData">
+        <td class="text-center textGrey">{{data.weekEnding | date: 'MM-dd-yyyy'}}</td>
+        <td class="text-center textGrey">{{data.retailSales | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
+        <td class="text-center textGrey">{{data.wholesaleSales | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
+        <td class="text-center textGrey">{{data.unitsSold}}</td>
+        <td class="text-center textGrey">{{data.retailerMargin | currency : 'USD' : 'symbol' : '1.0-0' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
