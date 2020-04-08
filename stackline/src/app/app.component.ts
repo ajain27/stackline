@@ -12,9 +12,9 @@ export class AppComponent implements OnInit {
   public months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC' ];
   public stackLineData: any;
   public salesData: any;
-  public retailSales: number;
-  public wholesaleSales: number;
-  public chart = [];
+  public retailSales: number[];
+  public wholesaleSales: number[];
+  public chart: any = [];
 
   constructor(private stackLineService: StacklineService) { }
 
