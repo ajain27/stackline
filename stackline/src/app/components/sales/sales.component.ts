@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StacklineService } from '../../services/stackline.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { StacklineService } from '../../services/stackline.service';
 })
 export class SalesComponent implements OnInit {
 
-  @Input() salesData: any;
+  public salesData: any;
   public stackLineData: any;
   constructor(private stackLineService: StacklineService) { }
 
