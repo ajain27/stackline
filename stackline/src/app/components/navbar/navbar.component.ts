@@ -30,6 +30,6 @@ export class NavbarComponent implements OnInit {
   }
 
   public toggle() {
-    document.getElementById('sidebar').classList.toggle('openSideBar');
+    document.getElementById('sidebar').classList.toggle('active');
   }
 }

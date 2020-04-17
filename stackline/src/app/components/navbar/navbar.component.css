@@ -30,22 +30,6 @@
 .active[data-tab-content] {
     display: block;
 }
-/* .cardOpen {
-    max-width: 250px;
-    height: 500px;
-    transition: 1s;
-    margin-left: 30px;
-}
-.cardOpen button {
-    position: absolute;
-    left: 30%;
-    bottom: 5%;
-
-} */
-/* .cardClose {
-    width: 0px;
-    transition: 0.5s;
-} */
 
 #sidebar {
     background-color: #fff;
@@ -59,7 +43,7 @@
     top: 114px;
 }
 
-#sidebar.openSideBar {
+#sidebar.active {
     left: 0px;
 }
 #sidebar ul {
