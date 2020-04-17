@@ -48,14 +48,15 @@
 } */
 
 #sidebar {
-    background-color: #AAA;
+    background-color: #fff;
     position: fixed;
-    left: -230px;
-    width: 200px;
+    left: -330px;
+    width: 300px;
     z-index: 9;
     height: 100%;
     margin-left: 30px;
     transition: all 300ms linear;
+    top: 120px;
 }
 
 #sidebar.openSideBar {
@@ -67,7 +68,7 @@
 }
 
 #sidebar ul li {
-    color: white;
+    color: black;
     list-style: none;
     margin: 15px 10px;
     padding: 15px 10px;
