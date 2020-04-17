@@ -9,8 +9,14 @@ export class StacklineService {
 
   constructor(private http: HttpClient) { }
   private stacklineJson = '../../assets/stackline.json';
+  private skilljar = '../../assets/skilljar.json';
 
   public getStackLineData(): Observable<any> {
     return this.http.get(this.stacklineJson);
   }
+
+  public getSkillJarData(): Observable<any> {
+    return this.http.get(this.skilljar);
+  }
+
 }

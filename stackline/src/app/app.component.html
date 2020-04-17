@@ -1,18 +1,25 @@
 <app-navbar></app-navbar>
-  <div class="container-fluid mt-5">
-    <div class="row m-2">
-      <div class="col-sm-12 col-md-2 panelWhite p-0 shadow" style="height: 1000px;">
-        <app-sidebar></app-sidebar>
-      </div>      
-      <div class="col-sm-12 col-md-10 ">
-        <div class="col-sm-12 col-md-12 col-lg-12 panelWhite pt-4 pb-4 shadow">
-          <h6 style="margin-left: 18px; font-weight: 300;">Retail Sales</h6>
-          <div *ngIf="chart">
-            <canvas id="canvas">{{chart}}</canvas>
+<div class="container-fluid mt-5">
+  <div class="row m-2">
+    <div class="col-sm-12 col-md-2 panelWhite p-0 shadow" style="height: 1000px;">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-sm-12 col-md-10 ">
+      <div class="col-sm-12 col-md-12 col-lg-12 panelWhite pt-4 pb-4 shadow">
+        <button class="btn btn-default" (click)="loadSales()">Load Sales</button>
+        <button class="btn btn-default" (click)="load()">Load Images</button>
+        <div *ngIf="chart">
+          <canvas id="canvas" *ngIf="showChart">{{chart}}</canvas>
+        </div>
+        <div *ngIf="!showChart">
+          <div class="card postcard" *ngFor="let item of skilljar">
+            <img src="{{item.media.m}}" alt="">
+            <h6 class="text-center">{{item.title}}</h6>
           </div>
         </div>
-        <br>
-          <app-sales></app-sales>
       </div>
+      <br>
+      <app-sales></app-sales>
     </div>
   </div>
+</div>

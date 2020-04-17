@@ -5,30 +5,51 @@ import { Chart } from 'chart.js';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-
-  public months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC' ];
+  public months = [
+    'JAN',
+    'FEB',
+    'MAR',
+    'APR',
+    'MAY',
+    'JUN',
+    'JUL',
+    'AUG',
+    'SEP',
+    'OCT',
+    'NOV',
+    'DEC',
+  ];
   public stackLineData: any;
   public salesData: any;
   public retailSales: number[];
   public wholesaleSales: number[];
   public chart: any = [];
+  public skilljar;
+  public showChart: boolean = true;
 
-  constructor(private stackLineService: StacklineService) { }
+  constructor(private stackLineService: StacklineService) {
+  }
 
   public ngOnInit() {
+    this.loadSales();
+    }
+  public loadSales() {
+    this.showChart = true;
     this.stackLineService.getStackLineData().subscribe((stackLineResponse) => {
       this.stackLineData = stackLineResponse ? stackLineResponse : null;
       for (const data of this.stackLineData) {
         this.salesData = data && data.sales ? data.sales : null;
-
+        // if (this.showChart) {
         // Chart code
         // tslint:disable-next-line: no-string-literal
         this.retailSales = data['sales'].map((sales: any) => sales.retailSales);
         // tslint:disable-next-line: no-string-literal
-        this.wholesaleSales = data['sales'].map((sales: any) => sales.wholesaleSales);
+        this.wholesaleSales = data['sales'].map(
+          (sales: any) => sales.wholesaleSales
+        );
 
         this.chart = new Chart('canvas', {
           type: 'line',
@@ -37,34 +58,46 @@ export class AppComponent implements OnInit {
             datasets: [
               {
                 label: 'Retail Selas',
-                data : this.retailSales,
+                data: this.retailSales,
                 borderColor: '#03a5fc',
-                fill: false
+                fill: false,
               },
               {
                 label: 'Wholesale Selas',
-                data : this.wholesaleSales,
+                data: this.wholesaleSales,
                 borderColor: '#becacf',
-                fill: false
-              }
-            ]
+                fill: false,
+              },
+            ],
           },
-          options:  {
+          options: {
             responsive: true,
             legend: {
-              display: true
+              display: true,
             },
             scales: {
-              xAxes: [{
-                display: true
-              }],
-              yAxes: [{
-                display: false
-              }]
-            }
-          }
+              xAxes: [
+                {
+                  display: true,
+                },
+              ],
+              yAxes: [
+                {
+                  display: false,
+                },
+              ],
+            },
+          },
         });
+        // }
       }
+    });
+  }
+
+  public load() {
+    this.showChart = false;
+    this.stackLineService.getSkillJarData().subscribe((res) => {
+      this.skilljar = res.items;
     });
   }
 }
