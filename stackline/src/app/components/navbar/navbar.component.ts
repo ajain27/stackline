@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  public open() {
+  public toggle() {
     document.getElementById('sidebar').classList.toggle('openSideBar');
   }
 }

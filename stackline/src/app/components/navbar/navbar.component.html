@@ -4,7 +4,7 @@
     <li data-tab-target="#home" class="active tab">Home</li>
     <li data-tab-target="#pricing" class="tab">Pricing</li>
     <li data-tab-target="#about" class="tab">About</li>
-    <li data-tab-target="#sideBar" class="tab" (click)="open()">Load sidebar</li>
+    <li data-tab-target="#sideBar" class="tab" (click)="toggle()">Toggle sidebar</li>
   </ul>
 </nav>
 
@@ -21,7 +21,7 @@
     <p>This is about</p>
   </div>
 
-  <div id="sidebar">
+  <div id="sidebar" data-tab-sidebar>
     <ul>
       <li>Home</li>
       <li>About</li>
